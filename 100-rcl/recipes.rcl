@@ -51,7 +51,11 @@ let gts-version = 40;
                     user = {
                         install = [
                             "org.kde.krita",
-                            "org.fedoraproject.MediaWriter"
+                            "org.fedoraproject.MediaWriter",
+                            if base-image == "kinoite":
+                                "org.kde.elisa",
+                            if base-image == "silverblue":
+                                "com.github.neithern.g4music",
                         ]
                     }
                 },

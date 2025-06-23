@@ -2,6 +2,8 @@
 
 [RCL](https://rcl-lang.org/) is a next-gen configuration language built in Rust which in this context can be used for easy matrixed recipe generation and image building through its simple way of generating configuration files. RCL is a superset of JSON and functions similarly to Jsonnet and Nix, but has a much better syntax and user experience.
 
+The benefits of using a configuration language with built-in matrixing and templating is that you can easily generate multiple similar recipes using ex. different base images and easily introduce differences between them using simple `if` statements and template strings. You could get to the same result by simply using multiple recipe files, one for each image, but when building a lot of very similar images that approach might be cumbersome and require a ton of repetitive work.
+
 This example showcases how to use RCL to generate a bunch recipes and build them all concurrently using with the GitHub Actions build matrix. The build matrix is automatically generated from the output of the `rcl build` command, and the logic of that generation might have to be adjusted to future RCL updates.
 
 - See [recipes.rcl](./recipes.rcl) for the RCL configuration.
